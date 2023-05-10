@@ -1,116 +1,54 @@
-// /**
-//  * Sample React Native App
-//  * https://github.com/facebook/react-native
-//  *
-//  * @format
-//  */
-
-// import React from 'react';
-// import type {PropsWithChildren} from 'react';
-// import {
-//   SafeAreaView,
-//   ScrollView,
-//   StatusBar,
-//   StyleSheet,
-//   Text,
-//   useColorScheme,
-//   View,
-// } from 'react-native';
-
-// import {
-//   Colors,
-//   DebugInstructions,
-//   Header,
-//   LearnMoreLinks,
-//   ReloadInstructions,
-// } from 'react-native/Libraries/NewAppScreen';
-
-// type SectionProps = PropsWithChildren<{
-//   title: string;
-// }>;
-
-// function Section({children, title}: SectionProps): JSX.Element {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text>Hiiidfgdfg</Text>
-//     </View>
-//   );
-// }
-
-// function App(): JSX.Element {
-//   const isDarkMode = useColorScheme() === 'dark';
-
-//   const backgroundStyle = {
-//     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-//   };
-
-//   return (
-//     <SafeAreaView style={backgroundStyle}>
-//       <StatusBar
-//         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-//         backgroundColor={backgroundStyle.backgroundColor}
-//       />
-//       <ScrollView
-//         contentInsetAdjustmentBehavior="automatic"
-//         style={backgroundStyle}>
-//         <Header />
-//         <View
-//           style={{
-//             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-//           }}>
-//           <Section title="Step One">
-//             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-//             screen and then come back to see your edits.
-//           </Section>
-//           <Section title="See Your Changes">
-//             <ReloadInstructions />
-//           </Section>
-//           <Section title="Debug">
-//             <DebugInstructions />
-//           </Section>
-//           <Section title="Learn More">
-//             Read the docs to discover what to do next:
-//           </Section>
-//           <LearnMoreLinks />
-//         </View>
-//       </ScrollView>
-//     </SafeAreaView>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   sectionContainer: {
-//     marginTop: 32,
-//     paddingHorizontal: 24,
-//   },
-//   sectionTitle: {
-//     fontSize: 24,
-//     fontWeight: '600',
-//   },
-//   sectionDescription: {
-//     marginTop: 8,
-//     fontSize: 18,
-//     fontWeight: '400',
-//   },
-//   highlight: {
-//     fontWeight: '700',
-//   },
-// });
-
-// export default App;
-
-
-import { View, Text } from 'react-native'
+import { View, Text, SectionList } from 'react-native'
 import React, { useEffect } from 'react'
+import FirstComp from './components/FirstComp'
+import ButtonEvent from './components/ButtonEvent'
+import PropsCom1 from './components/PropsCom1'
+import InternalStyle from './components/InternalStyle'
+import ExternalStyle from './components/ExternalStyle'
+import TextInputHandle from './components/TextInputHandle'
+import NativeSimpleForm from './components/NativeSimpleForm'
+import FlatListNative from './components/FlatListNative'
+import DymanicGrid from './components/DymanicGrid'
+import SectionListCom from './components/SectionListCom'
+import ClassBasedComp from './components/ClassBasedComp'
+import LifeCycleUseEffect from './components/LifeCycleUseEffect'
+import FlexArrangementComp from './components/FlexArrangementComp'
+import TouchableHighlightButton from './components/TouchableHighlightButton'
+import RadioButtonComp from './components/RadioButtonComp'
+import DynamicRadioOption from './components/DynamicRadioOption'
+import ActivityIndicatorLoader from './components/ActivityIndicatorLoader'
+import ModalDialogBox from './components/ModalDialogBox'
 
 const App = () => {
   useEffect(()=>{
     console.log("hello")
   },[])
   return (
-    <View>
-      <Text>THis is First time</Text>
+    <View style={{flex:1}}>
+      <Text style={{fontSize:30,textAlign:'center', color:"blue",marginTop:10,fontWeight:"bold"}}>
+        First React Native Application
+      </Text>
+      <Text style={{backgroundColor:"black",color:"white",textAlign:"center",margin:3}}>
+          Lets Jump into Native World!!
+      </Text>
+      {/* <FirstComp/> */}
+      {/* <ButtonEvent/> */}
+      {/* <PropsCom1/> */}
+      {/* <InternalStyle/> */}
+      {/* <ExternalStyle/> */}
+      {/* <TextInputHandle/> */}
+      {/* <NativeSimpleForm/> */}
+      {/* <FlatListNative/> */}
+      {/* <DymanicGrid/> */}
+      {/* <SectionListCom/> */}
+      {/* <ClassBasedComp/> */}
+      {/* <LifeCycleUseEffect/> */}
+      {/* <FlexArrangementComp/> */}
+      {/* <TouchableHighlightButton/> */}
+      {/* <RadioButtonComp/> */}
+      {/* <DynamicRadioOption/> */}
+      {/* <ActivityIndicatorLoader/> */}
+      <ModalDialogBox/>
     </View>
   )
 }
