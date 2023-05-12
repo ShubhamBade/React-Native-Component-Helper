@@ -1,4 +1,4 @@
-import { View, Text, SectionList } from 'react-native'
+import { View, Text } from 'react-native'
 import React, { useEffect } from 'react'
 import FirstComp from './components/FirstComp'
 import ButtonEvent from './components/ButtonEvent'
@@ -18,6 +18,15 @@ import RadioButtonComp from './components/RadioButtonComp'
 import DynamicRadioOption from './components/DynamicRadioOption'
 import ActivityIndicatorLoader from './components/ActivityIndicatorLoader'
 import ModalDialogBox from './components/ModalDialogBox'
+import PressableComp from './components/PressableComp'
+import StatusBarComp from './components/StatusBarComp'
+import StackComp from './components/NavigartionComponents/StackComp'
+import BottomTabNavigatorComp from './components/NavigartionComponents/BottomTabNavigatorComp'
+import MaterialBottomTabComp from './components/NavigartionComponents/MaterialBottomTabComp'
+import MaterialTopTab from './components/NavigartionComponents/MaterialTopTab'
+import SimpleFreeApi from './components/apiInNative/SimpleFreeApi'
+import PostApiComp from './components/apiInNative/PostApiComp'
+import APIListComp from './components/apiInNative/APIListComp'
 
 const App = () => {
   useEffect(()=>{
@@ -48,7 +57,16 @@ const App = () => {
       {/* <RadioButtonComp/> */}
       {/* <DynamicRadioOption/> */}
       {/* <ActivityIndicatorLoader/> */}
-      <ModalDialogBox/>
+      {/* <ModalDialogBox/> */}
+      {/* <PressableComp/> */}
+      <StatusBarComp/>
+      {/* <StackComp/> */}
+      {/* <BottomTabNavigatorComp/> */}
+      {/* <MaterialBottomTabComp/> */}
+      {/* <MaterialTopTab/> */}
+      {/* <SimpleFreeApi/> */}
+      {/* <PostApiComp/> */}
+      <APIListComp/>
     </View>
   )
 }
