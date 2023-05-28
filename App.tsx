@@ -1,4 +1,4 @@
-import { View, Text,Button } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import React, { useEffect } from 'react'
 import FirstComp from './components/FirstComp'
 import ButtonEvent from './components/ButtonEvent'
@@ -29,27 +29,19 @@ import PostApiComp from './components/apiInNative/PostApiComp'
 import APIListComp from './components/apiInNative/APIListComp'
 import HeaderComp from './components/reduxComponentUiTest/HeaderComp'
 import ProductComp from './components/reduxComponentUiTest/ProductComp'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HeaderAndProduct from './HeaderAndProduct'
+import UserListNavigationRedux from './components/reduxComponentUiTest/UserListNavigationRedux'
+
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   useEffect(() => {
     console.log("hello")
   }, [])
-  const products = [{
-    name: 'POCO M2 Pro',
-    price: '20000',
-    color: 'Navy Blue'
-  },
-  {
-    name: 'POCO M3 Pro',
-    price: '20000',
-    color: 'Navy Blue'
-  },
-  {
-    name: 'Mi 11 Pro',
-    price: '20000',
-    color: 'Navy Blue'
-  }
-  ]
+
   return (
     <View style={{ flex: 1 }}>
       <Text style={{ fontSize: 30, textAlign: 'center', color: "blue", marginTop: 10, fontWeight: "bold" }}>
@@ -85,12 +77,13 @@ const App = () => {
       {/* <SimpleFreeApi/> */}
       {/* <PostApiComp/> */}
       {/* <APIListComp/> */}
-      <HeaderComp />
-      <View style={{ flex: 13, backgroundColor: 'pink' }}>
-        {products.map((item) =>
-          <ProductComp item={item}/>
-        )}
-      </View>
+
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="HeaderAndProduct" component={HeaderAndProduct} />
+          <Stack.Screen name="UserListNavigationRedux" component={UserListNavigationRedux} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   )
 }
