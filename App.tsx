@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text,Button } from 'react-native'
 import React, { useEffect } from 'react'
 import FirstComp from './components/FirstComp'
 import ButtonEvent from './components/ButtonEvent'
@@ -27,18 +27,36 @@ import MaterialTopTab from './components/NavigartionComponents/MaterialTopTab'
 import SimpleFreeApi from './components/apiInNative/SimpleFreeApi'
 import PostApiComp from './components/apiInNative/PostApiComp'
 import APIListComp from './components/apiInNative/APIListComp'
+import HeaderComp from './components/reduxComponentUiTest/HeaderComp'
+import ProductComp from './components/reduxComponentUiTest/ProductComp'
 
 const App = () => {
-  useEffect(()=>{
+  useEffect(() => {
     console.log("hello")
-  },[])
+  }, [])
+  const products = [{
+    name: 'POCO M2 Pro',
+    price: '20000',
+    color: 'Navy Blue'
+  },
+  {
+    name: 'POCO M3 Pro',
+    price: '20000',
+    color: 'Navy Blue'
+  },
+  {
+    name: 'Mi 11 Pro',
+    price: '20000',
+    color: 'Navy Blue'
+  }
+  ]
   return (
-    <View style={{flex:1}}>
-      <Text style={{fontSize:30,textAlign:'center', color:"blue",marginTop:10,fontWeight:"bold"}}>
+    <View style={{ flex: 1 }}>
+      <Text style={{ fontSize: 30, textAlign: 'center', color: "blue", marginTop: 10, fontWeight: "bold" }}>
         First React Native Application
       </Text>
-      <Text style={{backgroundColor:"black",color:"white",textAlign:"center",margin:3}}>
-          Lets Jump into Native World!!
+      <Text style={{ backgroundColor: "black", color: "white", textAlign: "center", margin: 3 }}>
+        Lets Jump into Native World!!
       </Text>
       {/* <FirstComp/> */}
       {/* <ButtonEvent/> */}
@@ -59,14 +77,20 @@ const App = () => {
       {/* <ActivityIndicatorLoader/> */}
       {/* <ModalDialogBox/> */}
       {/* <PressableComp/> */}
-      <StatusBarComp/>
+      <StatusBarComp />
       {/* <StackComp/> */}
       {/* <BottomTabNavigatorComp/> */}
       {/* <MaterialBottomTabComp/> */}
       {/* <MaterialTopTab/> */}
       {/* <SimpleFreeApi/> */}
       {/* <PostApiComp/> */}
-      <APIListComp/>
+      {/* <APIListComp/> */}
+      <HeaderComp />
+      <View style={{ flex: 13, backgroundColor: 'pink' }}>
+        {products.map((item) =>
+          <ProductComp item={item}/>
+        )}
+      </View>
     </View>
   )
 }
